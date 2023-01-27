@@ -11,10 +11,12 @@ let rec eval1 = expr => {
   }
 }
 
-let rec compile = (expr: expr): SM0.instrs => {
+let rec cts0 = (expr: expr): SM0.instrs => {
   switch expr {
   | Cst(n) => list{Cst(n)}
-  | Add(e1, e2) => Belt.List.concatMany([compile(e1), compile(e2), list{Add}])
-  | Mul(e1, e2) => Belt.List.concatMany([compile(e1), compile(e2), list{Mul}])
+  | Add(e1, e2) => Belt.List.concatMany([cts0(e1), cts0(e2), list{Add}])
+  | Mul(e1, e2) => Belt.List.concatMany([cts0(e1), cts0(e2), list{Mul}])
   }
 }
+
+let compileToStackMachine0 = cts0
