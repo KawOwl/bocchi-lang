@@ -1,0 +1,15 @@
+{
+  "name": "bocchi-lang",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "res:build": "rescript",
+    "res:clean": "rescript clean",
+    "res:dev": "rescript build -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "rescript": "^10.1.1"
+  }
+}
