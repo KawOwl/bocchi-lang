@@ -3,11 +3,11 @@ type rec expr =
   | Add(expr, expr)
   | Mul(expr, expr)
 
-let rec eval1 = expr => {
+let rec eval = expr => {
   switch expr {
   | Cst(n) => n
-  | Add(e1, e2) => eval1(e1) + eval1(e2)
-  | Mul(e1, e2) => eval1(e1) * eval1(e2)
+  | Add(e1, e2) => eval(e1) + eval(e2)
+  | Mul(e1, e2) => eval(e1) * eval(e2)
   }
 }
 
